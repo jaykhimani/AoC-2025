@@ -7,10 +7,13 @@ import java.security.MessageDigest
  * Reads lines from the given input txt file.
  */
 
-fun readInput(name: String) =
-    object {}.javaClass.getResourceAsStream("/$name.txt")!!.bufferedReader().readText()
+fun readInput(name: String, sample: Boolean = false): List<String> {
+    val subDir = if (sample) "sample" else "actual"
+    return object {}.javaClass.getResourceAsStream("/$name/$subDir/$subDir.txt")!!.bufferedReader()
+        .readText()
         .trim()
         .lines()
+}
 
 fun log(msg: Any, debug: Boolean) {
     if (debug) {

@@ -4,7 +4,7 @@ import utils.log
 import utils.readInput
 
 fun main() {
-    val inputLines = readInput("day01/Day01")
+    val inputLines = readInput("day01")
     val debug = false
     println("Part 1: password: ${p1(inputLines, debug)}")
 

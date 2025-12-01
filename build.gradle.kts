@@ -14,3 +14,7 @@ tasks {
         gradleVersion = "9.2.1"
     }
 }
+
+tasks.withType<Copy>().configureEach {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
